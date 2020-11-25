@@ -139,3 +139,6 @@ const color = colors[index];
 console.log(color);
 // 6.Вешаем на body
 document.body.style.backgroundColor = color;
+
+console.log(Number(null)) 
+// в численом преобразовании Number(null) всегда приведится к нулю, и так же '0', false
