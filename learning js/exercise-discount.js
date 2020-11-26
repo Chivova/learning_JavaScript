@@ -45,7 +45,7 @@ payment -= payment * discount;  // висчитать процент от сум
 // // payment = payment - payment * discount;
 
 
-console.log(`Оформляем заказ на сумму ${payment} со скидкой ${discount}%`);
+console.log(`Оформляем заказ на сумму ${payment} со скидкой ${discount * 100}%`);
 console.log(`Общая сумма потраченая в магазине ${totalSpent}`);
 
 
