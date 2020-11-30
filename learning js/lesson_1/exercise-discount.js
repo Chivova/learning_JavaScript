@@ -30,7 +30,8 @@ totalSpent = payment + totalSpent;
 
 if (totalSpent >= 100 && totalSpent < 1000) {
     console.log('бронзовый партнёр, скидка 2%');
-    discount = 0.02;
+    discount = 0.02; // 2% процента в числах, если записать 2% то будет как строга и логики в этом 0
+    
 
 } else if (totalSpent >= 1000 && totalSpent < 5000) {
     console.log('серебрянный партрёр, скидка 5%');
