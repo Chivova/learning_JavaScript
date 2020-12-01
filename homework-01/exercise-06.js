@@ -14,10 +14,32 @@ let input;
 let total = 0;
 
 
-
-while (input = parseFloat(prompt('Введите число'))) {
+do { 
+    input = Number(prompt('Введите число'));
     
-    total += input;
-   
+    if (input != Number(input)) {
+
+        alert('Было введено не число, попробуйте еще раз');
+
+    } else { 
+        total += input;
+    }
+}
+while (input !== 0) {
+
+
 }
  alert(`Общая сумма чисел равна ${total}`);
+
+
+// Без проверки на ввод
+ 
+// let input;
+// let total = 0;
+ 
+// while (input = parseFloat(prompt("Введите число:"))) // parseFloat или вместо поставить Number
+
+// { 
+//     total += input;
+// } 
+// alert(`Общая сумма чисел равна ${total}`);
