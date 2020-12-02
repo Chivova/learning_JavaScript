@@ -23,28 +23,32 @@
 /* Тобі цикл потрібно закінчити коли умова виконається, умова у тебе довжина = 32.
 Ти в кожному циклі додаєш 7 і перевіряєш чи равлик не виповз, якщо ні, то додаєш 7 до поточної довжини і
 віднімаєш 2(ну або додаєш 5), і повторюєш */
-const distance = 128;
-let allDistance = 0;
-// let dayDistance = 7;
+const distance = 42;
+const dayDistance = 7;
 const nightDistance = 2;
-let day = 0;
+let allDistance = 0;
+let day = 1;
 
-// while (allDistance <= distance) {
+while (allDistance < distance) {
     
-//     allDistance = dayDistance - nightDistance;
-//     console.log(allDistance);
-//     dayDistance += 7;
-//     console.log(dayDistance);
-//     if (allDistance <= distance) {
-//         day += 1;    
-//     }
-// }
-// console.log(day);
-
-for (let dayDistance = 5; allDistance <= distance; dayDistance += 5) { 
-    allDistance = dayDistance - nightDistance;
-    if (allDistance <= distance) {
-        day += 1;    
+    allDistance += dayDistance;
+    if (allDistance < distance) {
+        day += 1;
+        allDistance -= nightDistance;
+    }
+    else if (allDistance = distance) { 
+        allDistance += nightDistance;
     }
 }
 console.log(day);
+
+// for (let dayDistance = 7; allDistance <= distance;) { 
+//     allDistance += dayDistance ;
+//     if (allDistance < distance) {
+//         day += 1;
+//         allDistance -= nightDistance;
+//     } else if (allDistance < distance) { 
+//         allDistance += nightDistance;
+//     }
+// }
+// console.log(day);
