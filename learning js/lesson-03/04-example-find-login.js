@@ -9,5 +9,63 @@
  * - Метод includes() с тернарным оператором
  */
 
+// const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+// const loginToFind = 'poly1scute';
+// // 1 вариант (олд скулл) через for - перебрать все элементы и сравнить
+// // let message = ''; // нужна перемменая что бы хранить вывод сообщения
+// let message = `Пользователь ${loginToFind} не найден`; // мы сразу говорим что пользователь не найден, но если находим перезаписываем значение
+
+// for (let i = 0; i < logins.length; i += 1) {
+//     const login = logins[i];
+//     console.log('Login: ', login);
+
+//    /*  if (login !== loginToFind) {
+//         message = `Пользователь ${loginToFind} не найден`;
+//     } else {
+//          message = `Пользователь ${loginToFind} найден`;
+//          такое условие не работает, потому что цикл выведет Пользователь ${ loginToFind } не найден, из - за того что цикла продолжает
+//     перебирать все элементы, и не останавливается даже если есть совпадение, поэтому нужно переписать условие и поставить break;
+//     можно break поставить и в условие else, но это будет плохо читабельный с кучей вложеностей код
+//     } */
+
+//     // Этот вариант называется практикой без else
+//     console.log(`${login} === ${loginToFind}`, login === loginToFind )
+//     if (login === loginToFind) {
+//         message = `Пользователь ${loginToFind} найден`;
+//         break; // ---> break - прерывает полностью цикл, а не текущею итерацию и все что ниже break не выполняется
+//         // и четвертая итерация даже не выполняется
+//     }
+//     // message = `Пользователь ${loginToFind} не найден`; // что бы улучшить код, записываем вначале в меременную message 
+//     // // (где указали значение пустой строки '') неудачный кейс, ведь при любом неудачном кейсе в переменную message
+//     // // на этой строке будет перезаписыватся одно и тоже значение  
+// }
+// console.log(message);
+
+// 2 способ через for of (так как элементы в массиве не меняем)
+
+// const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+// const loginToFind = 'poly1scute';
+// let message = `Пользователь ${loginToFind} не найден`; 
+
+// for (const login of logins) {
+//     console.log(login);
+//     if (login === loginToFind) {
+//         message = `Пользователь ${loginToFind} найден`;
+//         break;
+//     }
+// }
+// console.log(message);
+
+// 3 и самый лучший вариант.Если нам что - то нужно: примитивное значение, число или строку найти в массиве, есть встроенный
+// метод includes(), который возвращает true или false.Работает следующим способом - перебирает все элементы в массиве и
+// сравнивает с каждым элементом, то есть используем в том случае если нужно проверить есть там такое или нету
+// includes называется абстрактным методом массива(метод скрывает детали реализации под капотом и отдает то что тебе нужно)
+// который его перебирает, проверяет на вхождение и т.д.
+// console.log(logins.includes(loginToFind));
+// Используем метод includes() и тернарный оператор ? '' : ''
 const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
-const loginToFind = 'aj4xth3m4n';
+const loginToFind = 'poly1scute';
+
+const message = logins.includes(loginToFind) ? `Пользователь ${loginToFind} найден` : `Пользователь ${loginToFind} не найден`;
+// буквально logins === loginToFind ? true : false;
+console.log(message);
