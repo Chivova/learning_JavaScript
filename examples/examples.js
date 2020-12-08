@@ -1,11 +1,11 @@
-const fruits = ["Яблоки", "Груша", "Апельсин"];
+// const fruits = ["Яблоки", "Груша", "Апельсин"];
 
-// добавляем новое значение в "копию"
-let shoppingCart = fruits;
-shoppingCart.push("Банан");
+// // добавляем новое значение в "копию"
+// let shoppingCart = fruits;
+// shoppingCart.push("Банан");
 
-// что в fruits?
-console.log(fruits.length); 
+// // что в fruits?
+// console.log(fruits.length); 
 
 /*
 Давайте произведём 5 операций с массивом.
@@ -36,3 +36,7 @@ console.log(styles);
 
 styles.unshift('Рэп', 'Регги');
 console.log(styles);
+
+
+
+
