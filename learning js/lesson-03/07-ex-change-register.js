@@ -21,9 +21,8 @@ for (const letter of letters) {
     //     console.log('Эта буква в верхнем регистре - ', letter);
     //     inversedString += letter.toLowerCase();      
     // }
-        // если есть тоько два условия записываем через тернарник
-    inversedString +=
-        letter === letter.toLowerCase()
+        // если есть только два условия записываем через тернарник
+    inversedString += letter === letter.toLowerCase()
             ? letter.toUpperCase() :
             letter.toLowerCase();
 }
