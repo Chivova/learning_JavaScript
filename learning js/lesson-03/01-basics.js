@@ -17,7 +17,7 @@ const friends = ['Mango', 'Kiwi', 'Poly', 'Ajax'];
 console.log(friends.length); // свойство length выводит длину массива
 console.table(friends);
 
-// индекс массива всегда считантся length - 1;
+// индекс массива всегда считается length - 1;
 const lastIndex = friends.length - 1;
 console.log(lastIndex); // пример если нужно взять последнее значение в массиве
 

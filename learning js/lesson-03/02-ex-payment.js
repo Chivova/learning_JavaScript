@@ -28,7 +28,7 @@ const secondCart = [54, 28, 105, 70, 92, 17, 120, 12, 25, 90, 7];
 console.log(secondCart);
 
 for (let i = 0; i < secondCart.length; i += 1) {
-    secondCart.length; // ----> потому что в условии стоит  < - меньше, а не '<='
+    // secondCart.length; // ----> потому что в условии стоит  < - меньше, а не '<='
     secondCart[i] = Math.round(secondCart[i] * 1.1);
 }
 

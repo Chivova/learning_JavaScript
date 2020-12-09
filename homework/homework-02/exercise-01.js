@@ -4,12 +4,15 @@
 '1 - Mango', а для индекса 2 выведет '3 - Ajax'. */
 
 const logItems = function (array) {
-    let change = array.length;
+    
 
-    for (let i = 0; i < array.length; i += 1){
-        change += `-${i}`;
+    for (let i = 1; i <= array.length; i += 1){
+        let numberString =`${i}-`;
+        numberString += array[i-1];
+
+        console.log(numberString);
     }
-    console.log(change);
+    
 };
 
 
