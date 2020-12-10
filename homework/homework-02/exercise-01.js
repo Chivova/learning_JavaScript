@@ -4,18 +4,25 @@
 '1 - Mango', а для индекса 2 выведет '3 - Ajax'. */
 
 const logItems = function (array) {
-    
 
     for (let i = 1; i <= array.length; i += 1){
-        let numberString =`${i}-`;
-        numberString += array[i-1];
+         let numberString =`${i}-` + `${array[i-1]}`;
+        // numberString += array[i-1];
 
         console.log(numberString);
     }
-    
 };
 
+// или
 
+// const logItems = function (array) {
+
+//    for (let i = 0; i < array.length; i += 1) {
+//        let numberString = `${i + 1}-` + `${array[i]}`;
+       
+//     console.log(numberString);
+// }
+// };
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
