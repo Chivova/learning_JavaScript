@@ -4,8 +4,17 @@
 // Если длина больше 40 символов, то функция обрезает строку до 40 - ка символов и добавляет в конец строки троеточие '...',
 // после чего возвращает укороченную версию.
 
-const formatString = function(string) {
+const formatString = function (string) {
+  // console.log(string.length);
+  const maxStringLenght = 40;
+  let formattedString = ' ';
+// console.log(string);
+  if (string.length > maxStringLenght) {
+   formattedString = string.slice(0, 40) + '...';
+    return formattedString;
+  }
   
+  return string;  
 };
 
 /*
