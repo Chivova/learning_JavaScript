@@ -11,9 +11,9 @@
 Если хочешь, в случае некорректного ввода, показывай alert с текстом 'Было введено не число, попробуйте еще раз',
 при этом результат prompt записывать в массив чисел не нужно, после чего снова пользователю предлагается ввести число в prompt. */
 
-let input;
-const numbers = [];
-let total = 0;
+// let input;
+// const numbers = [];
+// let total = 0;
 
 
 // while (input !== null) {
@@ -22,7 +22,7 @@ let total = 0;
 //     if (input === null) {
 //         break;
 //     }
-//     if (Number(input)) {
+//     if (Number(input) || 0 === 0 ) {
 //         numbers.push(Number(input));
 //     } else {
 //         alert('Было введено не число, попробуйте еще раз');
@@ -36,21 +36,43 @@ let total = 0;
 // }
 // console.log(total);
 
-while (input !== null) {
-  input = prompt('Введите число: ');
-  if (input === null) {
-    break;
-  }
-  if (parseInt(input)) {
-    numbers.push(parseInt(input));
-  } else {
-    alert('Было введено не число, попробуйте еще раз');
-  }
+// while (input !== null) {
+//   input = prompt('Введите число: ');
+//   if (input === null) {
+//     break;
+//   }
+//   if (parseInt(input)|| 0 === 0) {
+//     numbers.push(parseInt(input));
+//   } else {
+//     alert('Было введено не число, попробуйте еще раз');
+//   }
 
-  console.log(numbers);
-}
-for (const number of numbers) {
-  total += number;
-}
+//   console.log(numbers);
+// }
+// for (const number of numbers) {
+//   total += number;
+// }
 
-console.log(total);
+// console.log(total);
+
+// ИЛИ
+
+let input;
+const numbers = [];
+let total = 0;
+
+do {
+    input = prompt('Введите число');
+
+        if (Number.isNaN(Number(input))) {
+            alert('Было введено не число, попробуйте еще раз');
+        } else {
+            numbers.push(Number(input));
+        }  
+
+} while (input !== null) {
+      for (const number of numbers) {
+        total += number;
+    }
+    console.log(`Общая сумма чисел равна ${total}`);
+}

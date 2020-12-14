@@ -38,41 +38,41 @@ const isLoginValid = function (login) {
     const min = 4;
     const max = 16;
     const suitableLogin = login.length
-//  console.log(login);
-
-    // if (suitableLogin >= min && suitableLogin <= max) 
-
-    // return login = suitableLogin >= min && suitableLogin <= max;
 
     return login = suitableLogin >= min && suitableLogin <= max ;
 };
 
 const isLoginUnique = function(allLogins, login) {
-    let loginToFind = allLogins.includes(login);
+    // const loginToFind = allLogins.includes(login);
 
-    return !loginToFind;
+    // return !loginToFind;
+
+    // или
+    return !allLogins.includes(login);
 };
 
 const addLogin = function(allLogins, login) {
     if (!isLoginValid(login)) {
-        return 'Ошибка! Логин должен быть от 4 до 16 символов';
-    }
-    if (isLoginUnique(allLogins, login)) {
-        allLogins.push(login);
-        return 'Логин успешно добавлен!';
-        
-    } else {
 
-        return 'Такой логин уже используется!';
+        return 'Ошибка! Логин должен быть от 4 до 16 символов';
+
     }
-    console.log(logins);
+    if (!isLoginUnique(allLogins, login)) {
+        
+        return 'Такой логин уже используется!';
+        
+    } 
+
+    allLogins.push(login);
+
+    return 'Логин успешно добавлен!';
+    
 };
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */
-console.log(isLoginValid('Ajax'));
-console.log(isLoginUnique(logins, 'robotGoogles'));
+
 console.log(addLogin(logins, 'Ajax')); // 'Логин успешно добавлен!'
 console.log(addLogin(logins, 'robotGoogles')); // 'Такой логин уже используется!'
 console.log(addLogin(logins, 'Zod')); // 'Ошибка! Логин должен быть от 4 до 16 символов'
