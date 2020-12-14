@@ -29,7 +29,7 @@ const findLogin = function (allLogins, loginToFind) {
     //     : `Пользователь ${loginToFind} не найден.`;
     // return message;
     // запись через переменную, но лучше сделать и так:
-    // отсекаем все лишнее и переменную(лучшая практика привікать так писать)
+    // отсекаем все лишнее и переменную(лучшая практика привыкать так писать)
     return allLogins.includes(loginToFind)
         ? `Пользователь ${loginToFind} найден.`
         : `Пользователь ${loginToFind} не найден.`;

@@ -7,12 +7,11 @@ const checkForSpam = function (message) {
     const forbiddenSecWord = 'sale';
     const normalizedString = message.toLowerCase();
     
-    if (normalizedString.includes(forbiddenFirstWord) || normalizedString.includes(forbiddenSecWord)) {
-        
-        return true;
-    }
+    // if (normalizedString.includes(forbiddenFirstWord) || normalizedString.includes(forbiddenSecWord));
 
-    return false;
+    // return normalizedString.includes(forbiddenFirstWord) || normalizedString.includes(forbiddenSecWord);
+    
+    return normalizedString.includes(forbiddenFirstWord) || normalizedString.includes(forbiddenSecWord);
 };
 
 /*

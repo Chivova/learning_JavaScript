@@ -23,24 +23,24 @@
 /* Тобі цикл потрібно закінчити коли умова виконається, умова у тебе довжина = 32.
 Ти в кожному циклі додаєш 7 і перевіряєш чи равлик не виповз, якщо ні, то додаєш 7 до поточної довжини і
 віднімаєш 2(ну або додаєш 5), і повторюєш */
-// const distance = 128;
-// const dayDistance = 7;
-// const nightDistance = 2;
-// let allDistance = 0;
-// let day = 1;
+const distance = 128;
+const dayDistance = 7;
+const nightDistance = 2;
+let allDistance = 0;
+let day = 1;
 
-// while (allDistance < distance) {
+while (allDistance < distance) {
     
-//     allDistance += dayDistance;
-//     if (allDistance < distance) {
-//         day += 1;
-//         allDistance -= nightDistance;
-//     }
-//     else if (allDistance = distance) { 
-//         allDistance += nightDistance;
-//     }
-// }
-// console.log(day);
+    allDistance += dayDistance;
+    if (allDistance < distance) {
+        day += 1;
+        allDistance -= nightDistance;
+    }
+    else if (allDistance === distance) { 
+        allDistance += nightDistance;
+    }
+}
+console.log(day);
 
 // for (let dayDistance = 7; allDistance <= distance;) { 
 //     allDistance += dayDistance ;
@@ -53,21 +53,19 @@
 // }
 // console.log(day);
 
-const moveUp = 7;
-const moveDown = 2;
-let move = 0;
-let day = 0;
-
-const dayToExit = function (ft) {
-    for (let i = 0; i < ft; i += 1) {
-        move += moveUp;
-        day += 1;
-        if (move < ft) {
-            day -= 2;
-            continue;
-        }
-        return day;
-    }
-};
+// const dayToExit = function (ft, moveUp = 7, moveDown = 2) {
+//     let move = 0
+//     let day = 0;
+    
+//     for (let i = 0; i < ft; i += 1) {
+//         move += moveUp;
+//         day += 1;
+//         if (move < ft) {
+//             move -= moveDown;
+//             continue;
+//         }
+//         return day;
+//     }
+// }
  
-console.log(dayToExit(128));
+// console.log(dayToExit(128));

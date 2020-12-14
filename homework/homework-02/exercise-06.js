@@ -15,20 +15,42 @@ let input;
 const numbers = [];
 let total = 0;
 
-do {
-    input = prompt('Введите число: ');
-    
-    if (input != Number(input)) {
-        alert('Было введено не число, попробуйте еще раз');
-    }
-    numbers.push(input);
-    
-    
-    // console.log(numbers);
 
-} while ( input !== null) {
-    for (const number of numbers) {
-        total += number;
-    }
+// while (input !== null) {
+//     input = prompt('Введите число: ');
+
+//     if (input === null) {
+//         break;
+//     }
+//     if (Number(input)) {
+//         numbers.push(Number(input));
+//     } else {
+//         alert('Было введено не число, попробуйте еще раз');
+//     }
+
+//     console.log(numbers);
+
+// }
+//     for (const number of numbers) {
+//         total += number;
+// }
+// console.log(total);
+
+while (input !== null) {
+  input = prompt('Введите число: ');
+  if (input === null) {
+    break;
+  }
+  if (parseInt(input)) {
+    numbers.push(parseInt(input));
+  } else {
+    alert('Было введено не число, попробуйте еще раз');
+  }
+
+  console.log(numbers);
 }
+for (const number of numbers) {
+  total += number;
+}
+
 console.log(total);
