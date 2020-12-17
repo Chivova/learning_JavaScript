@@ -6,6 +6,11 @@ let pi = Math.PI;
 pi = parseFloat(pi.toFixed(2)) ;
 console.log(pi);
 
+// const pi = Number(Math.PI.toFixed(2));
+// // ! Помните что toFixed возвращает строку поэтому лучше еще делать явное преобразование к числу
+// // ! Вы можете использовать функцию Number или parseFloat
+// console.log(pi);
+
 /* 2.Используя Math, найти максимальное и минимальное числа из представленного ряда 15, 11, 16, 12, 51, 12, 13, 51 */
 
 const maxNumber = Math.max(15, 11, 16, 12, 51, 12, 13, 51);
@@ -22,6 +27,8 @@ let floatRandomNumber;
 floatRandomNumber = Math.random();
 floatRandomNumber = parseFloat(floatRandomNumber.toFixed(2));
 
+const random = Number(Math.random().toFixed(2));
+
 console.log(floatRandomNumber);
 
 let intRandomNumber;
@@ -32,6 +39,9 @@ console.log(intRandomNumber);
 /* 4.Проверить результат вычисления 0.6 + 0.7 - как привести к нормальному виду (1.3)? */
 let result = 0.6 + 0.7;
 result = parseFloat(result.toFixed(1));
+
+const fixNum = Number(0.6 + 0.7).toFixed(1);
+console.log(fixNum);
 
 console.log(result);
 
