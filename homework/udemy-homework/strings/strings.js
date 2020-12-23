@@ -90,4 +90,3 @@ console.log(string);
 // const a = 20, b = 16;
 // const strFromNum = String(a) + String(b);
 // console.log(strFromNum);
-
