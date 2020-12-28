@@ -18,11 +18,20 @@ const arr = ['HTML', 'JavaScript', 'Algol', 'CSS', 'Python', 'Basic'];
 const sortStringArray = (stringArray) => {
     const sortedArray = stringArray.slice(); // делаем копию массива
    
-    for (let i = sortedArray.length - 1; i < 0; i -= 1) { 
+    for (let i = sortedArray.length - 1; i > 0; i -= 1) { // первый цикл идет от последнего элемента к первому (сужает границу)
+        
         for (let j = 0; j < i; j += 1) { 
-
+            // console.log(j);
+            if (sortedArray[j] > sortedArray[j + 1]) { // строки можно сравнивать, в алфавите А будет меньше чем В, B < C и т.д. (!!!маленькие буквы болльше чем заглавные!!!)
+                // меняем местами элементы после сравнения 
+                const temp = sortedArray[j]; // создаем временную переменую чтобы сохранить меньшее значение (чтобы не потерять)
+                sortedArray[j] = sortedArray[j + 1]; // меньшему значению присваиваем значение из большей ячейки
+                sortedArray[j + 1] = temp; // в большее значение записываем меньшее 
+            }
         }
     }
+
+    return sortedArray;
 };
 
 console.log(arr);
