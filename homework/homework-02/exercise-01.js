@@ -6,7 +6,7 @@
 const logItems = function (array) {
 
     for (let i = 1; i <= array.length; i += 1){
-         let numberString =`${i}-` + `${array[i-1]}`;
+         let numberString =`${i}-` + `${array[i-1]} `;
         // numberString += array[i-1];
 
         console.log(numberString);

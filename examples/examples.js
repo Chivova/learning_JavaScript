@@ -28,7 +28,17 @@ const styles = ['Джаз', 'Блюз'];
 styles.push(' Рок-н-ролл');
 console.log(styles);
 
-styles[Math.floor((styles.length - 1) / 2)] = "Классика";
+// styles[Math.floor((styles.length - 1) / 2)] = "Классика";
+// console.log(styles);
+
+// или самый простой способ если нужно заменить только 1 элемент
+// const middleIndexElement = Math.ceil((styles.length / 2) - 1);
+// styles[middleIndexElement] = 'Классика';
+
+// или лучше будет через переменную и метод splice
+const middleIndexElement = Math.ceil((styles.length / 2 ) - 1); /* тоже самое что и в предедущем примере, только через 
+1 так как индексация начинается с 0 */
+styles.splice(middleIndexElement, 1, 'Классика');
 console.log(styles);
 
 console.log(styles.shift());
