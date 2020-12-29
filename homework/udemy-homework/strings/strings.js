@@ -18,15 +18,14 @@ console.log(firstChar, lastChar);
 
 /* Сделать первую и последнюю буквы в верхнем регистре */
 
-firstSymbol = firstSymbol.toUpperCase();
-lastSymbol = lastSymbol.toUpperCase();
+const firstLastCharUpper = `${string[0].toUpperCase()}${string.slice(1,-1)}${string[string.length - 1].toUpperCase()}`;
+console.log(firstLastCharUpper);
 
-console.log(firstSymbol, lastSymbol);
 
 // Пример преподавателя
 
-const firstLastUpper = `${string[0].toUpperCase()}${string.slice(1,-1)}${string[string.length - 1].toUpperCase()}`;
-console.log(firstLastUpper);
+// const firstLastUpper = `${string[0].toUpperCase()}${string.slice(1,-1)}${string[string.length - 1].toUpperCase()}`;
+// console.log(firstLastUpper);
 
 /* Найти положение слова ‘string’ в строке */
 const findWord = string.indexOf('string');
