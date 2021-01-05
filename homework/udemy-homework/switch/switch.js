@@ -21,7 +21,7 @@
 
 const a = 'block';
 
-switch (a) { 
+switch (a) {
     case 'block':
         console.log('block');
         break;
@@ -31,8 +31,8 @@ switch (a) {
     case 'inline':
         console.log('inline');
         break;
-    
-    default: console.log('other');;
+
+    default: console.log('other');
 }
 
 // Пример преподователя

@@ -11,6 +11,21 @@ for (let i = 0; i < strFirstUpper.length; i++) {
 }
 console.log(strFirstUpper.join(' '));
 
+// через if
+// const str = 'i am in the easycode';
+// let strFirstUpper = '';
+
+// for (let i = 0; i < str.length; i++) { 
+//   if (i === 0 || str[i - 1] === ' ') {
+//     strFirstUpper += str[i].toUpperCase();
+//   } else { 
+//     strFirstUpper += str[i];
+//   }
+  
+// }
+
+// console.log(strFirstUpper);
+
 // Пример преподователя
 // let str = 'i am in the easycode';
 // let res = '';
@@ -28,15 +43,34 @@ console.log(strFirstUpper.join(' '));
 /* 2. Дана строка “tseb eht ma i”. Используя циклы, сделать строку-перевертыш 
 (то есть последняя буква становится первой, предпоследняя - второй итд). */
 
+// const reversedString = 'tseb eht ma i';
+// let normalizeString = '';
+
+// for (let i = reversedString.length - 1; i >= 0; i -= 1) { 
+    
+//     normalizeString += reversedString[i];
+    
+// }
+// console.log(normalizeString);
+
+// Второе решение
 const reversedString = 'tseb eht ma i';
 let normalizeString = '';
 
-for (let i = reversedString.length - 1; i >= 0; i -= 1) { 
-    
-    normalizeString += reversedString[i];
-    
+for (let i = reversedString.length; i--;) {  // ---> обратить внимание на ; после i--
+  normalizeString += reversedString[i];
 }
 console.log(normalizeString);
+
+// пример решения
+// let str = "tseb eht ma i";
+// let newStr = "";
+// for (let i = 1; i <= str.length; i++) {
+  
+//   newStr += str[str.length - i];
+  
+// }
+// console.log(newStr);
 
 // Пример преподователя
 // let str = 'tseb eht ma i';
@@ -52,33 +86,47 @@ console.log(normalizeString);
 включительно: 3! = 3*2*1, 5! = 5*4*3*2*1. С помощью циклов вычислить факториал числа 10. Использовать for. */
 
 const n= 10;
-let factorial= '' ;
+let factorial = 1;
 
 for (let i = n; i > 0; i -= 1) { 
-    factorial += i + '*';
+    factorial *= i ;
 }
-console.log('10! = ',factorial);
+console.log('10! = ', factorial);
 
 // Пример преподователя
 
-let res = 1;
+// let res = 1;
 
-for (let i = 1; i <= 10; i++) {
-  res *= i;
-}
-console.log(res);
+// for (let i = 1; i <= 10; i++) {
+//   res *= i;
+// }
+// console.log(res);
 
 /* 4. На основе строки “JavaScript is a pretty good language” сделать новую строку,
 где каждое слово начинается с большой буквы, а пробелы удалены. Использовать for. */
-const string = 'JavaScript is a pretty good language';
-let camelCaseString = string.split(' ');
+// const string = 'JavaScript is a pretty good language';
+// let camelCaseString = string.split(' ');
 
-for (let i = 0; i < camelCaseString.length; i += 1) { 
-    camelCaseString[i] = camelCaseString[i][0].toUpperCase() + camelCaseString[i].slice(1);
+// for (let i = 0; i < camelCaseString.length; i += 1) { 
+//     camelCaseString[i] = camelCaseString[i][0].toUpperCase() + camelCaseString[i].slice(1);
     
+// }
+// camelCaseString = camelCaseString.join('');
+// console.log(camelCaseString);
+
+// через if
+
+const string = 'JavaScript is a pretty good language';
+let camelCaseString = '';
+
+for (let i = 0; i < string.length; i++) {
+  if (i === 0 || string[i - 1] === ' ') {
+    camelCaseString += string[i].toUpperCase();
+  } else if (string[i] !== ' '){
+    camelCaseString += string[i];
+  }
 }
-camelCaseString = camelCaseString.join('');
-console.log(camelCaseString);
+ console.log(camelCaseString);
 
 // Пример преподователя
 
@@ -105,7 +153,7 @@ for (const odd of array) {
         
     }
 
-     console.log(`${odd}`);
+     console.log(odd);
 }
 
 // Пример преподователя
@@ -156,3 +204,4 @@ console.log(list);
 // }
 
 // console.log(list);
+
