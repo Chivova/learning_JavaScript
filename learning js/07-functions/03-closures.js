@@ -7,16 +7,16 @@
  * это называется «замыкание».
  */
 
- const fnA = function (parameter) {
-    const innerVariable = 'значение внутренней переменной функции fnA';
+const fnA = function (parameter) {
+  const innerVariable = "значение внутренней переменной функции fnA";
 
-    const innerFunction = function () {
-        console.log(parameter);
-        console.log(innerVariable);
-        console.log('Это вызов innerFunction');
-    };
+  const innerFunction = function () {
+    console.log(parameter);
+    console.log(innerVariable);
+    console.log("Это вызов innerFunction");
+  };
 
-     return innerFunction; // --> получается функция innerFunction замыкается в области видимости функции fnA
+  return innerFunction; // --> получается функция innerFunction замыкается в области видимости функции fnA
 };
 
 const fnB = fnA(555); // результатом вызова fnA() будет функция innerFunction
@@ -45,26 +45,25 @@ fnB(); // --> замыкание заключается в том что, при
 // Что бы не повторять при вызове функции makeDish() аргумент 'Mango' и 'Poly' можно возпользоваться замыканием
 
 const makeSheff = function (name) {
+  const makeDish = function (dish) {
+    console.log(`${name} готовит ${dish}`);
+  };
 
-    const makeDish = function (dish) {
-        console.log(`${name} готовит ${dish}`);
-    };
-
-    return makeDish;
+  return makeDish;
 };
 
-const mango = makeSheff('Mango');
+const mango = makeSheff("Mango");
 
-mango('омлет');
-mango('чай');
-mango('пирожок');
+mango("омлет");
+mango("чай");
+mango("пирожок");
 console.dir(mango);
 
-const poly = makeSheff('Poly');
+const poly = makeSheff("Poly");
 
-poly('котлеты');
-poly('супик');
-poly('кофе');
+poly("котлеты");
+poly("супик");
+poly("кофе");
 console.dir(poly);
 // По факту выглядит вот так:
 // const makeSheff = function (Mango) {
@@ -73,7 +72,3 @@ console.dir(poly);
 //     };
 //     return makeDish;
 // };
-
-/*
- * Округлятор 🤷‍♂️
- */
