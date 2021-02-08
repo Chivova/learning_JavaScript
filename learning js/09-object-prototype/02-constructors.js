@@ -49,7 +49,13 @@
 //   //    тоесть Car.prototype это ПРОТОТИП будущего обьекта (экземпляра)
 
 //   // 4. Ссылка на обьект возвращается в место вызова new Car
-// }; //
+
+// Методы функциях - конструкторах
+// Все что обьявляется в теле функции делается копия на экземпляр
+// this.changePrice = function (newPrice) { --Ю получается что будет на каждый обьект КОПИЯ и это не есть хорошо
+//    this.price = newPrice;
+// }
+// };
 
 // // 1. Если функция вызывается через new, создаётся пустой объект
 // const myCar = new Car(5); // вызов функции Car через оператор  new -->
@@ -77,8 +83,25 @@ const Car = function ({ brand, model, price } = {}) {
   this.price = price;
 };
 
-const myCar1 = new Car({ brand: 'Audi', model: 'Q3', price: 35000 });
-console.log(myCar1);
+// У каждой функции(кроме стрелочных) есть свойство prototype. ПРОТОТИП устанавливается сразу после создания экземпляра и prototype можно использовать
+// чтобы добавить общие методы
+
+Car.prototype.sayHi = function () {
+  console.log('Car.prototype.sayHi -> this', this);
+  console.log('Hello :) ');
+};
+console.log(Car.prototype);
+
+Car.prototype.changePrice = function (newPrice) {
+  this.price = newPrice;
+};
+
+const myCar = new Car({ brand: 'Audi', model: 'Q3', price: 35000 });
+myCar.sayHi(); // вызов sayHi происходит в контексте  myCar (поэтому this будет ссылатся на myCar) в обьекте в свойстве __proto__ лежит ссылка 
+// на этот обьеткт(Car) и получается если вызвать метод sayHi оно попробует найти это своство в экземпляре myCar, в котором его нету,
+// а в цепочке __proto__ оно будет и поэтому вызовется
+myCar.changePrice(10000);
+console.log(myCar);
 
 const myCar2 = new Car({ brand: 'VW', model: 'Golf', price: 25000 });
 console.log(myCar2);
