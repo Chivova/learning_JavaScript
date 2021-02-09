@@ -76,41 +76,81 @@
 5.В myCar возвращается(лежит) ссылка на ново-созданный экземпляр(обьект)
 */
 
-const Car = function ({ brand, model, price } = {}) {
-  //    const { brand, model, price } = param; // или сразу записать в пераметры
-  this.brand = brand;
-  this.model = model;
-  this.price = price;
+// const Car = function ({ brand, model, price } = {}) {
+//   //    const { brand, model, price } = param; // или сразу записать в пераметры
+//   this.brand = brand;
+//   this.model = model;
+//   this.price = price;
+// };
+
+// // У каждой функции(кроме стрелочных) есть свойство prototype. ПРОТОТИП устанавливается сразу после создания экземпляра и prototype можно использовать
+// // чтобы добавить общие методы
+
+// Car.prototype.sayHi = function () {
+//   console.log('Car.prototype.sayHi -> this', this);
+//   console.log('Hello :) ');
+// };
+// console.log(Car.prototype);
+
+// Car.prototype.changePrice = function (newPrice) {
+//   this.price = newPrice;
+// };
+
+// const myCar1 = new Car({ brand: 'Audi', model: 'Q3', price: 35000 });
+// myCar1.sayHi(); // вызов sayHi происходит в контексте  myCar (поэтому this будет ссылатся на myCar) в обьекте в свойстве __proto__ лежит ссылка
+// // на этот обьеткт(Car) и получается если вызвать метод sayHi оно попробует найти это своство в экземпляре myCar, в котором его нету,
+// // а в цепочке __proto__ оно будет и поэтому вызовется
+// myCar1.changePrice(10000);
+// console.log(myCar1);
+
+// const myCar2 = new Car({ brand: 'VW', model: 'Golf', price: 25000 });
+// console.log(myCar2);
+
+// const myCar3 = new Car({ brand: 'Audi', model: 'X6', price: 50000 });
+// console.log(myCar3);
+
+// const myCar4 = new Car({ brand: 'Ford', model: 'Fusion', price: 45000 });
+// console.log(myCar4);
+
+// const myCar5 = new Car({ brand: 'Audi', model: 'A6', price: 65000 });
+// console.log(myCar5);
+
+const User = function ({ email, pwd } = {}) {
+  this.email = email;
+  this.pwd = pwd;
 };
 
-// У каждой функции(кроме стрелочных) есть свойство prototype. ПРОТОТИП устанавливается сразу после создания экземпляра и prototype можно использовать
-// чтобы добавить общие методы
-
-Car.prototype.sayHi = function () {
-  console.log('Car.prototype.sayHi -> this', this);
-  console.log('Hello :) ');
+User.prototype.changeEmail = function (newEmail) {
+  this.email = newEmail;
 };
-console.log(Car.prototype);
+User.prototype.changePwd = function (newPwd) {
+  this.pwd = newPwd;
+};
+const mango = new User({ email: 'mango@mail.com', pwd: 1111111 });
+console.log(mango);
 
-Car.prototype.changePrice = function (newPrice) {
-  this.price = newPrice;
+mango.changeEmail('my-new-mail@mail.com');
+mango.changePwd(22225555);
+console.log(mango);
+
+/*
+ * Статические свойства и методы
+ * - Статические свойства и методы доступны только на самом конструкторе
+ * - В статических методах не нужен this (он как бы есть но ссылается на саму функцию-конструктор, а не на экземпляр)
+ * - Статические свойства  используются больше как вспомогательные методы
+ */
+
+User.message =
+  'Я статическое свойство, меня нет на экземплярах или в прототипе.';
+
+User.logInfo = function (obj) {
+  console.log('User.logInfo -> obj', obj);
+  console.log('Почта: ', obj.email);
+  console.log('Пароль: ', obj.password);
 };
 
-const myCar = new Car({ brand: 'Audi', model: 'Q3', price: 35000 });
-myCar.sayHi(); // вызов sayHi происходит в контексте  myCar (поэтому this будет ссылатся на myCar) в обьекте в свойстве __proto__ лежит ссылка 
-// на этот обьеткт(Car) и получается если вызвать метод sayHi оно попробует найти это своство в экземпляре myCar, в котором его нету,
-// а в цепочке __proto__ оно будет и поэтому вызовется
-myCar.changePrice(10000);
-console.log(myCar);
+User.logInfo(mango);
 
-const myCar2 = new Car({ brand: 'VW', model: 'Golf', price: 25000 });
-console.log(myCar2);
-
-const myCar3 = new Car({ brand: 'Audi', model: 'X6', price: 50000 });
-console.log(myCar3);
-
-const myCar4 = new Car({ brand: 'Ford', model: 'Fusion', price: 45000 });
-console.log(myCar4);
-
-const myCar5 = new Car({ brand: 'Audi', model: 'A6', price: 65000 });
-console.log(myCar5);
+// Object.keys() // --> статический метод (вспомогательный) keys на конструкторе Object (вызываем не на самом обьекте, а
+// вызвали с конструктора и кидаем туда сам метод)
+// Object.value() // --> статический метод value на конструкторе Object
