@@ -30,10 +30,10 @@ console.table(players);
 /*
  * Увеличиваем кол-во поинтов каждого игрока на 10%
  */
-// const upatedPlayers = players.map((player) => ({
-//   ...player, // распыляем в новый обьект все свойства со старого (новый обьект со свойстами players)
-//   points: player.points * 1.1, //свойство которое хотим изменить
-// }));
+const upatedPlayers = players.map((player) => ({
+  ...player, // распыляем в новый обьект все свойства со старого (новый обьект со свойстами players)
+  points: player.points * 1.1, //свойство которое хотим изменить
+}));
 
 // console.log(upatedPlayers);
 

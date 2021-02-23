@@ -5,6 +5,10 @@
  */
 
 const array = [1, 2, [4, [5]], [6, [7, 8, [9]]]];
+
+const arr = array.join(',').split(',');
+// console.log(arr);
+
 // console.log(array.flat(1)); // [1, 2, 4, [5], 6, [7, 8, [9]]]
 // console.log(array.flat(3)); // [1, 2, 4, 5, 6, 7, 8, [9]]
 // console.log(array.flat(2)); // [1, 2, 4, 5, 6, 7, 8, 9]
