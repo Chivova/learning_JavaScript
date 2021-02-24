@@ -120,3 +120,73 @@ const tagsStats = allTags.reduce((acc, tag) => {
 
 // если свойство с ключом tag есть. увеличить его значение на 1
 // если свойствоства нет с таким ключом что в tag, сделать и записать 1
+
+/*
+ * Собираем все теги из твитов
+ */
+const tweets = [
+  { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+  { id: '001', likes: 2, tags: ['html', 'css'] },
+  { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+  { id: '003', likes: 8, tags: ['css', 'react'] },
+  { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
+];
+
+const allTags = tweets.reduce(function (tags, tweet) {
+  tags.push(...tweet.tags);
+
+  return tags;
+}, []);
+
+// console.log(allTags);
+
+/*
+ * Ведём статистику тегов - еще пример этой же задачи
+ */
+// const tagsStats = allTags.reduce(function(acc, tag) {
+//   console.log('TAG: ', tag);
+//   console.log('ACC: ', acc);
+
+//   if (acc.hasOwnProperty(tag)) {
+//     console.log('такое свойство есть, увеличиваем значение');
+
+//     acc[tag] += 1;
+
+//     return acc;
+//   }
+
+//   console.log('Такого свойства нет, добавляем на обьект');
+//   acc[tag] = 1;
+
+//   return acc;
+// }, {});
+
+// Грязная версия, мутирует аргумент который придет в acc
+// const tagsStats = allTags.reduce(function(acc, tag) {
+//   acc[tag] = acc.hasOwnProperty(tag) ? acc[tag] + 1 : 1;
+
+//   return acc;
+// }, {});
+
+// Чистая версия, каждый раз создает новый обьект
+const tagsStats = allTags.reduce(function (acc, tag) {
+  return {
+    ...acc,
+    [tag]: acc.hasOwnProperty(tag) ? acc[tag] + 1 : 1,
+  };
+}, {});
+
+// console.log(tagsStats);
+
+/*
+ * Reduce своими руками
+ */
+// Array.prototype.reduce = function(callback, initialValue = this[0]) {
+//   let accumulator = initialValue;
+
+//   for (let i = 0; i < this.length; i += 1) {
+//     accumulator = callback(accumulator, this[i], i, this);
+//   }
+
+//   return accumulator;
+// };
