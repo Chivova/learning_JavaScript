@@ -7,10 +7,10 @@
  *    - если коллбек вернул false элемент НЕ добавляется в возвращаемый массив
  */
 
-const numbers = [5, 10, 15, 20, 25];
+// const numbers = [5, 10, 15, 20, 25];
 
-const filteredNumbers = numbers.filter((number) => number < 10 || number > 15);
-console.log(filteredNumbers);
+// const filteredNumbers = numbers.filter((number) => number < 10 || number > 15);
+// console.log(filteredNumbers);
 
 const players = [
   { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
@@ -26,7 +26,7 @@ const players = [
 
 // const onlinePlayers = players.filter((player) => player.online);
 const onlinePlayers = players.filter(({ online }) => online);
-console.table(onlinePlayers);
+// console.table(onlinePlayers);
 
 /*
  * Получаем массив всех оффлайн игроков
@@ -34,7 +34,7 @@ console.table(onlinePlayers);
 
 // const offlinePlayers = players.filter((player) => !player.online);
 const offlinePlayers = players.filter(({ online }) => !online);
-console.table(offlinePlayers);
+// console.table(offlinePlayers);
 
 /*
  * Получаем список хардкорных игроков с временем больше 250
@@ -42,4 +42,32 @@ console.table(offlinePlayers);
 
 // const hardcorePlayers = players.filter((player) => player.timePlayed > 250);
 const hardcorePlayers = players.filter(({ timePlayed }) => timePlayed > 250);
-console.table(hardcorePlayers);
+// console.table(hardcorePlayers);
+
+/*
+ * filter своими руками
+ */
+
+// - создает новый массив и возаращает
+// - колбек для каждого элемента
+// - Если колбек вернул true пишет элемент в новый массив
+
+const filter = function (array, callback) {
+  const newArray = [];
+
+  for (let i = 0; i < array.length; i += 1) {
+    const passed = callback(array[i], i, array);
+
+    if (passed) {
+      newArray.push(array[i]);
+    }
+  }
+
+  return newArray;
+};
+
+const numbers = [5, 10, 15, 20, 25];
+
+const filteredNumbers = filter(numbers, (number, index, array) => number > 15);
+
+console.log(filteredNumbers);

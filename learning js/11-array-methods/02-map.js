@@ -5,12 +5,12 @@
  * - Возвращает новый массив такой же длины
  */
 
-const numbers = [5, 10, 15, 20, 25];
+// const numbers = [5, 10, 15, 20, 25];
 
-const doubledNums = numbers.map((number) => number * 2);
+// const doubledNums = numbers.map((number) => number * 2);
 
-console.log('numbers', numbers);
-console.log('doubledNums', doubledNums);
+// console.log('numbers', numbers);
+// console.log('doubledNums', doubledNums);
 
 const players = [
   { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
@@ -19,7 +19,7 @@ const players = [
   { id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: false },
   { id: 'player-5', name: 'Chelsy', timePlayed: 80, points: 48, online: true },
 ];
-console.table(players);
+// console.table(players);
 
 // const playerNames = players.map((player) => player.name);
 // console.log('playerNames', playerNames);
@@ -60,4 +60,57 @@ const updatedPlayers = players.map((player) =>
     ? { ...player, timePlayed: player.timePlayed + 100 }
     : player
 );
-console.table(updatedPlayers);
+// console.table(updatedPlayers);
+
+/*
+ * map своими руками
+ */
+
+const numbers = [5, 10, 15, 20, 25];
+
+// - создает и возвращает новый массив
+// - перебирает оригинальный массив
+// - вызывает колбек для каждого элемента и кидает туда аргументы
+// - записывает результат вызова функции в новый массив
+
+const map = (array, callback) => {
+  const newArray = [];
+
+  for (let i = 0; i < array.length; i += 1) {
+    const result = callback(array[i], i, array);
+    newArray.push(result);
+  }
+
+  return newArray;
+};
+
+const doubledNumbers = map(numbers, (number, index, array) => {
+  console.log(number);
+  console.log(index);
+  console.log(array);
+
+  return number * 2;
+});
+
+// console.log(doubledNumbers);
+
+/*
+ * Пишем руками на Array.prototype.map
+ */
+
+Array.prototype.map = function (callback) {
+  const newArray = [];
+
+  for (let i = 0; i < this.length; i += 1) {
+    const result = callback(this[i], i, this);
+    newArray.push(result);
+  }
+
+  return newArray;
+};
+
+// const numbers = [5, 10, 15, 20, 25];
+
+const doubled = numbers.map((number) => number * 2);
+
+// console.log(doubled);
