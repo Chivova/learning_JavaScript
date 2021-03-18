@@ -1,7 +1,7 @@
 /*
  * Делегирование
  * - один из многих
- * - несколько из многих и Set
+ * - несколько из многих и Set => не пропускает дубляжи
  */
 
 // Выбрать только 1 tag
@@ -43,14 +43,15 @@ function onTagsContainerClick(evt) {
 
   const btn = evt.target;
   const tag = btn.dataset.value;
-  const isActive = btn.classList.contains('tags__btn--active');
+  const isActive = btn.classList.contains('tags__btn--active'); //проверка или активный класс
 
   if (isActive) {
+    // если класс активный удаляем его из колекции
     selectedTags.delete(tag);
   } else {
-    selectedTags.add(tag);
+    selectedTags.add(tag); // если класс неактивный добавляем его в колекцию
   }
 
-  btn.classList.toggle('tags__btn--active'); // При таком подходе нет где хранить значение
+  btn.classList.toggle('tags__btn--active'); // При таком подходе нет где хранить значение, для этого можно заюзать Set
   console.log(selectedTags);
 }
