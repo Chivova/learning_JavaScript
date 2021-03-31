@@ -1,5 +1,3 @@
-# js-22
-
 - Терминал
   - [Шпаргалка 1](https://tproger.ru/translations/bash-cheatsheet/)
   - [Шпаргалка 2](https://habr.com/ru/company/ruvds/blog/445270/)
@@ -43,3 +41,18 @@
 - точка вывода
 - загрузчики
 - плагины
+
+- [Git]
+- git status - (перевірити статус в репо і в якій я гілці)
+- git pull origin main - стягнути файли в локальну гілку (на комп)
+- git checout -b <name> - створення нової гілки з іменем name
+- git commit -a -m "commit" - створення коміту
+- git status - (перевірити статус в репо і в якій я гілці)
+- git push origin <private_branch_name> - запушити коміти в гілку
+- git checout main - перейти в main
+- git pull origin main - стягнути файли в локальну гілку (оновити)
+- git merge <private_branch_name> - об'єднати гілку з main
+- git push origin main - запушити зміни в main
+-
+- git branch -d <private_branch_name> - видалити локальну гілку
+- git push origin --delete <private_branch_name> - видалити віддалену гілку
