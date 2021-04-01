@@ -53,6 +53,7 @@
 - git pull origin main - стягнути файли в локальну гілку (оновити)
 - git merge <private_branch_name> - об'єднати гілку з main
 - git push origin main - запушити зміни в main
--
+- git branch <private_branch_name> - создание новой ветки
+- git checkout <private_branch_name> - переключение между ветками
 - git branch -d <private_branch_name> - видалити локальну гілку
 - git push origin --delete <private_branch_name> - видалити віддалену гілку
