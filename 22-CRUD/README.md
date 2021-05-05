@@ -1,5 +1,3 @@
-# js-22
-
 - Пакет [json-server](https://github.com/typicode/json-server)
 - Postman/Postwoman/Insomnia и т. д.
 - Работа с приватным API

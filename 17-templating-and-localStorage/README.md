@@ -1,5 +1,3 @@
-# js-22
-
 - WebStorage API и JSON
 - Введение в шаблонизацию
   - [Пакет для Parcel](https://www.npmjs.com/package/parcel-plugin-handlebars-precompile)

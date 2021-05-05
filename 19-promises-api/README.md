@@ -1,5 +1,3 @@
-# js-22
-
 - Promise API
   - Promise.prototype.then(result)
   - Promise.prototype.catch(error)

@@ -1,5 +1,3 @@
-# js-22
-
 ## [Часть 1 (теория)](https://docs.google.com/presentation/d/1YK1DogtkPz0zTo313uAeuvvNh1vFfbStCD-g39jGd5M/edit?usp=sharing)
 
 - Архитектура клиент-сервер
